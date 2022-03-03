@@ -4,7 +4,7 @@ const lines = fs.readFileSync('inputs.txt', { encoding: 'UTF-8' }).split('\n');
 
 const length = lines[0].length;
 let ones = Array(length).fill(0);
-let zeroes = Array(length).fill(0);
+let zeros = Array(length).fill(0);
 let gamma = '';
 let epsilon = '';
 
@@ -12,14 +12,14 @@ for (const line of lines) {
   const digits = [...line];
   digits.forEach((digit, index) => {
     if (digit === '0') {
-      zeroes[index]++;
+      zeros[index]++;
     } else {
       ones[index]++;
     }
   });
 }
 for (i = 0; i < length; i++) {
-  if (ones[i] > zeroes[i]) {
+  if (ones[i] > zeros[i]) {
     gamma += 1;
     epsilon += 0;
   } else {
